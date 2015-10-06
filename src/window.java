@@ -1,7 +1,7 @@
-import com.sun.xml.internal.messaging.saaj.packaging.mime.util.LineInputStream;
-
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,27 +10,39 @@ import java.io.InputStreamReader;
 /**
  * Created by quwantoq on 06.10.15.
  */
-public class main extends JPanel {
+public class window extends JPanel {
+private Color i;
+    public void go(){
 
 
-
-    public main(Color i) {
-    setBackground(i);
-        repaint();
     }
+
+
 
 
     @Override
     public void paintComponent(Graphics g) {
+
         super.paintComponent(g);
+        setBackground(i);
         //write either "RED" or "BLUE" using graphics
        System.out.println("PaintComponent was called!");
+        Timer timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                i=Color.blue;
+                System.out.println("Go!Go!Go!");
+                repaint();
+            }
+        });
+
+        timer.start();
 
 
 
     }
 
-    //main method: create an instance of TestPanel and output it on a JFrame
+    //window method: create an instance of TestPanel and output it on a JFrame
     public static void main(String[] args) throws IOException {
 
         JFrame f = new JFrame();
@@ -39,7 +51,8 @@ public class main extends JPanel {
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        f.setContentPane(new main(Color.red));
+
+
 
         f.setVisible(true);
 
@@ -48,8 +61,6 @@ public class main extends JPanel {
         String line=buffer.readLine();
 
         if (line.equals("q")) {
-
-            f.setContentPane(new main(Color.blue));
 
         }
     }
