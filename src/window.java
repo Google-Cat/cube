@@ -2,51 +2,89 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.TimerTask;
+
 /**
  * Created by quwantoq on 06.10.15.
  */
 public class window extends JPanel {
-private Color i;
-    @Override
-    public void paintComponent(Graphics g) {
-        int width=0;
-        int gidth=0;
-        super.paintComponent(g);
-        for (int k=0;k<50;k++){
-            super.paintComponent(g);
-
-            g.fillRect(gidth+k,width+k,gidth+20+k,width+k+20);
-
+public window(){
+    setFocusable(true);
+    requestFocusInWindow();
+    addKeyListener(new KeyAdapter() {
+        @Override
+        public void keyReleased(KeyEvent e) {
+            myKeyEvt(e, "keyReleased");
         }
 
-        //write either "RED" or "BLUE" using graphics
-      // System.out.println("PaintComponent was called!");
+        @Override
+        public void keyPressed(KeyEvent e) {
+            myKeyEvt(e, "keyPressed");
+        }
 
+        private void myKeyEvt(KeyEvent e, String text) {
+            int key = e.getKeyCode();
+            System.out.println("TEST");
 
+            if (key == KeyEvent.VK_KP_LEFT || key == KeyEvent.VK_LEFT)
+            {
+                moveLeft();;
+                System.out.println(text + " LEFT");
+
+            }
+            else if (key == KeyEvent.VK_RIGHT)
+            {
+                System.out.println(text + " RIGHT");
+                moveRight();
+                //Call some function
+            }
+
+        }
+    });
+}
+int x=250;
+final int CUBESIZE = 30;
+    void moveRight() {
+     this.x+=20;
+        repaint();
+    }
+    void moveLeft() {
+        this.x-=20;
+        repaint();
+    }
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawRect(x,5,CUBESIZE,CUBESIZE);
 
 
     }
 
-    //window method: create an instance of TestPanel and output it on a JFrame
-    public static void main(String[] args) throws IOException {
-        window w = new window();
-        w.repaint();
+    public static void main(String[] args) {
+
         JFrame f = new JFrame();
-
         f.setSize(500, 500);
-
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        f.add(new window());
-
+        window w = new window();
+        f.add(w);
         f.setVisible(true);
 
-        BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+        Timer timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Hi!");
 
-        String line=buffer.readLine();
+
+            }
+        });
+
+
 
     }
 }
+
