@@ -17,10 +17,7 @@ public window(){
     setFocusable(true);
     requestFocusInWindow();
     addKeyListener(new KeyAdapter() {
-        @Override
-        public void keyReleased(KeyEvent e) {
-            myKeyEvt(e, "keyReleased");
-        }
+
 
         @Override
         public void keyPressed(KeyEvent e) {
@@ -29,40 +26,45 @@ public window(){
 
         private void myKeyEvt(KeyEvent e, String text) {
             int key = e.getKeyCode();
-            System.out.println("TEST");
 
-            if (key == KeyEvent.VK_KP_LEFT || key == KeyEvent.VK_LEFT)
+            if (key == KeyEvent.VK_LEFT)
             {
                 moveLeft();;
-                System.out.println(text + " LEFT");
 
             }
+
             else if (key == KeyEvent.VK_RIGHT)
             {
-                System.out.println(text + " RIGHT");
                 moveRight();
-                //Call some function
+
             }
 
         }
     });
 }
-int x=250;
-final int CUBESIZE = 30;
-    void moveRight() {
+private int x=250;
+private final int CUBESIZE = 30;
+private int  y = 0;
+
+    void moveDown( ){
+        y+=20;
+        repaint();
+    }
+
+    void moveRight( ) {
      this.x+=20;
         repaint();
     }
-    void moveLeft() {
+
+    void moveLeft( ) {
         this.x-=20;
-        repaint();
+       repaint();
     }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawRect(x,5,CUBESIZE,CUBESIZE);
-
-
+        g.drawRect(x,y,CUBESIZE,CUBESIZE);
     }
 
     public static void main(String[] args) {
@@ -77,11 +79,12 @@ final int CUBESIZE = 30;
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Hi!");
+               w.moveDown();
 
 
             }
         });
+        timer.start();
 
 
 
