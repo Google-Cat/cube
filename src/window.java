@@ -27,61 +27,93 @@ public window(){
         private void myKeyEvt(KeyEvent e, String text) {
             int key = e.getKeyCode();
 
-            if (key == KeyEvent.VK_LEFT)
-            {
+            if (key == KeyEvent.VK_LEFT) {
                 moveLeft();;
 
             }
 
-            else if (key == KeyEvent.VK_RIGHT)
-            {
+            else if (key == KeyEvent.VK_RIGHT) {
                 moveRight();
 
+            }
+            else if (key == KeyEvent.VK_DOWN) {
+                //moveDown();
+            }
+            else if (key == KeyEvent.VK_UP){
+               // moveUp();
             }
 
         }
     });
 }
-private int x=250;
+private int x = 0;
 private final int CUBESIZE = 30;
-private int  y = 0;
+private int y = 0;
+    void setX(int x ){
+        this.x = x;
+        repaint();
+    }
+    void setY(int y ){
+        this.y = y;
+        repaint();
 
-    void moveDown( ){
-        y+=20;
+    }
+    void moveDownUntilEnd(){
+       if (y<530){
+           y+=53;
+           repaint();
+       }
+    }
+    void moveUp( ) {
+        y-=1;
+        repaint();
+    }
+    void moveDown( ) {
+        y+=1;
         repaint();
     }
 
     void moveRight( ) {
-     this.x+=20;
-        repaint();
+        if (this.x < 553) {
+            this.x += 79;
+            repaint();
+        }
     }
 
     void moveLeft( ) {
-        this.x-=20;
-       repaint();
+        if (this.x >0) {
+            this.x -= 79;
+            repaint();
+        }
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawRect(x,y,CUBESIZE,CUBESIZE);
+        g.drawString("My coordinates is: X:" + x + " Y:" + y, x-19,y+CUBESIZE-15);
     }
 
     public static void main(String[] args) {
 
         JFrame f = new JFrame();
-        f.setSize(500, 500);
+        f.setSize(600, 600);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window w = new window();
         f.add(w);
         f.setVisible(true);
+        System.out.println("Window height: " + f.getInsets() + "Width: "  );
 
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-               w.moveDown();
-
-
+            //   w.setY(500-20-31-8);
+                /*)
+                530 при высоте окна в 600, разница на 100, линейная. Вопрос! Куда проебываются 70 пикселей
+                553! По иксу, это ещё непонятнее!
+                С координатами ебала какая-то
+                */
+                w.moveDownUntilEnd();
             }
         });
         timer.start();
