@@ -1,3 +1,5 @@
+import sun.security.pkcs11.wrapper.CK_UNLOCKMUTEX;
+
 /**
  * Created by lunin_000 on 11.10.2015.
  */
@@ -47,7 +49,16 @@ public class Shape {
             x1 -= CUBESIZE;
          }
     }
+    void moveDown( ) {
+        if ((y1 < CUBESIZE*9) && (y2 < CUBESIZE*9) && (y3 < CUBESIZE*9) && (y4 < CUBESIZE*9)){
+            y1 += CUBESIZE;
+            y2 += CUBESIZE;
+            y3 += CUBESIZE;
+            y4 += CUBESIZE;
+        }
 
+
+    }
 
 
     @Override
