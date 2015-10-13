@@ -4,6 +4,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class Printer extends JPanel {
+    Shape sh = new Shape(Shape.ShapeType.FIGURE1,0,0);
     public Printer() {
         setFocusable(true);
         requestFocusInWindow();
@@ -19,11 +20,13 @@ public class Printer extends JPanel {
                 int key = e.getKeyCode();
 
                 if (key == KeyEvent.VK_LEFT) {
-                    moveLeft();
+                    sh.moveLeft();
+                    repaint();
 
 
                 } else if (key == KeyEvent.VK_RIGHT) {
-                    moveRight();
+                    sh.moveRight();
+                    repaint();
 
                 } else if (key == KeyEvent.VK_DOWN) {
                     //moveDown();
@@ -36,39 +39,20 @@ public class Printer extends JPanel {
     }
 
     private int x = 0;
-    public final int CUBESIZE = 30;
+    static public final int CUBESIZE = 30;
     private int y = 0;
 
 
-    void moveRight() {
-        if (this.x < CUBESIZE * 9) {
-            this.x += CUBESIZE;
-            repaint();
-        }
-    }
 
-    void moveLeft() {
-        if (this.x > 0) {
-            this.x -= CUBESIZE;
-            repaint();
-        }
-    }
-
-    void moveDownUntilEnd() {
-        if (y < CUBESIZE * 9) {
-            this.y += CUBESIZE;
-            repaint();
-        }
-    }
 
     @Override
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-        g.drawRect(x, y, CUBESIZE, CUBESIZE);
-        g.drawRect(x, y - CUBESIZE, CUBESIZE, CUBESIZE);
-        g.drawRect(x, y - CUBESIZE - CUBESIZE, CUBESIZE, CUBESIZE);
-        g.drawRect(x, y - CUBESIZE - CUBESIZE - CUBESIZE, CUBESIZE, CUBESIZE);
+        g.drawRect(sh.x1, sh.y1, CUBESIZE, CUBESIZE);
+        g.drawRect(sh.x2, sh.y2, CUBESIZE, CUBESIZE);
+        g.drawRect(sh.x3, sh.y3, CUBESIZE, CUBESIZE);
+        g.drawRect(sh.x4, sh.y4, CUBESIZE, CUBESIZE);
 
         /*
         Вообще тут будет 4 drawRect(), только хызы как передать от объекта, вообще пойдет даже cube.getX1() и тд. будет

@@ -25,10 +25,12 @@ public class Window {
         System.out.println(f.getContentPane().getSize());
         System.out.println("Window height: " + f.getInsets() + "Width: ");
 
+        //System.out.println(sh.toString());
+
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                p.moveDownUntilEnd();
+                //p.moveDownUntilEnd();
             }
         });
         timer.start();
