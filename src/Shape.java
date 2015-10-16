@@ -3,11 +3,9 @@ import sun.security.pkcs11.wrapper.CK_UNLOCKMUTEX;
 /**
  * Created by lunin_000 on 11.10.2015.
  */
-public class Shape {
-    enum ShapeType {
-        FIGURE1,FIGURE2,FIGURE3,FIGURE4,FIGURE5,FIGURE6,FIGURE7
-    }
-    final int CUBESIZE = 30;
+ class Shape {
+
+    static final int CUBESIZE = 30;
     int x1;
     int x2;
     int x3;
@@ -17,21 +15,27 @@ public class Shape {
     int y3;
     int y4;
 
-   //Default position http://codenjoy.com/portal/wp-content/uploads/2012/11/13.png
-    public Shape (ShapeType st, int inputX, int inputY){
-        switch (st){
-            case FIGURE1:
-                x1 = inputX;
-                x2 = inputX;
-                x3 = inputX;
-                x4 = inputX;
-                y1 = inputY;
-                y2 = y1 + CUBESIZE;
-                y3 = y2 + CUBESIZE;
-                y4 = y3 + CUBESIZE;
-                break;
-        }
+    Shape(){
     }
+
+
+   /*......     ........       ... ..          ......         .....--         ...  ..
+    ..-..      ..:..-.        ..:...         ...:..          ...:-..         .-.:-..          .--.:.-.
+            FIGURE1      FIGURE2     FIGURE3         FIGURE4          FIGURE5      FIGURE6             FIGURE7      :*:               .-
+            .......................................................................................................
+            -+***.                   .....              .....
+            -+**:.                   =+++.              *%%@+         .........                         .....
+            -+++*.    --:-:----.     =+++.              +%%@+        .%%%%@%%%+   *%%%@%%%%-            ++++:
+            -=+*:.    :=+*+****-     ===+.              *%%%+        .@@@@@@@@+   *@@@@@@@@-            ====:
+            -+==*.    :++++++++-     ===+.              *%%%+    :%%%@%%=%:           -%==%@%%%+   -+++====+=++++
+            -+**:.    :***+****-     =+++++++:     .=%%@+%%@+    :%%%@%%%%:           -%%%%@%%%+   -+++======++++
+            -+++*.    :===+====-     =+++++++-     .=%%@+%%@+
+            -+**:.
+            -+**:.
+*/
+
+
+
     void moveRight( ) {
         if ((x1 < CUBESIZE*9) && (x2 < CUBESIZE * 9) && (x3 < CUBESIZE * 9) && (x4 < CUBESIZE * 9) ) {
             x1 += CUBESIZE;
@@ -59,10 +63,18 @@ public class Shape {
 
 
     }
+     void rotateRight(){
+
+     }
+
+    String getData(){
 
 
+        return ("x1="+this.x1+ " y1=" + this.y1);
+    }
     @Override
     public String toString() {
         return "("+")";
     }
 }
+

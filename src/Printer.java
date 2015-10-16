@@ -4,7 +4,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class Printer extends JPanel {
-    Shape sh = new Shape(Shape.ShapeType.FIGURE1,0,0);
+ Figure1 f1 = new Figure1(0,0);
     public Printer() {
         setFocusable(true);
         requestFocusInWindow();
@@ -20,18 +20,22 @@ public class Printer extends JPanel {
                 int key = e.getKeyCode();
 
                 if (key == KeyEvent.VK_LEFT) {
-                    sh.moveLeft();
+                    f1.moveLeft();
                     repaint();
 
 
                 } else if (key == KeyEvent.VK_RIGHT) {
-                    sh.moveRight();
+                  f1.moveRight();
                     repaint();
 
                 } else if (key == KeyEvent.VK_DOWN) {
-                    //moveDown();
+                    f1.rotateRight();
+
+                    //Rotation of fiugre
+
+
                 } else if (key == KeyEvent.VK_UP) {
-                    // moveUp();
+                  //Forced down move
                 }
 
             }
@@ -49,10 +53,11 @@ public class Printer extends JPanel {
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-        g.drawRect(sh.x1, sh.y1, CUBESIZE, CUBESIZE);
-        g.drawRect(sh.x2, sh.y2, CUBESIZE, CUBESIZE);
-        g.drawRect(sh.x3, sh.y3, CUBESIZE, CUBESIZE);
-        g.drawRect(sh.x4, sh.y4, CUBESIZE, CUBESIZE);
+        g.drawRect(f1.x1, f1.y1, CUBESIZE, CUBESIZE);
+        g.drawRect(f1.x2, f1.y2, CUBESIZE, CUBESIZE);
+     g.drawRect(f1.x3, f1.y3, CUBESIZE, CUBESIZE);
+   g.drawRect(f1.x4, f1.y4, CUBESIZE, CUBESIZE);
+
 
         /*
         Вообще тут будет 4 drawRect(), только хызы как передать от объекта, вообще пойдет даже cube.getX1() и тд. будет
