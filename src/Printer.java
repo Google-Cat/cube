@@ -55,8 +55,8 @@ public class Printer extends JPanel {
         super.paintComponent(g);
         g.drawRect(f1.x1, f1.y1, CUBESIZE, CUBESIZE);
         g.drawRect(f1.x2, f1.y2, CUBESIZE, CUBESIZE);
-     g.drawRect(f1.x3, f1.y3, CUBESIZE, CUBESIZE);
-   g.drawRect(f1.x4, f1.y4, CUBESIZE, CUBESIZE);
+        g.drawRect(f1.x3, f1.y3, CUBESIZE, CUBESIZE);
+        g.drawRect(f1.x4, f1.y4, CUBESIZE, CUBESIZE);
 
 
         /*
