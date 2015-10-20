@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 /**
  * Created by quwantoq on 06.10.15.
  */
@@ -15,15 +16,27 @@ public class Window {
         f.getContentPane().setPreferredSize(new Dimension(p.CUBESIZE * 10, p.CUBESIZE * 10));
         f.pack();
 
-       // System.out.println(f1.getData());
+
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-               p.f1.moveDown();
+                p.f1.moveDown();
+
                 p.repaint();
+                /*
+               if (p.f1.getDown() ){
+                   p.f1.saveToMemomery()
+                   }
+                   */
+
             }
         });
         timer.start();
+        /*
+        p.f1.moveDown();
+        p.f1.moveDown();
+        p.f1.moveDown();
+    */
     }
 }
 
