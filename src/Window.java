@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by quwantoq on 06.10.15.
+ * Created by quwantoq on 06.10.15
  */
 public class Window {
     public static void main(String[] args) {
