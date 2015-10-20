@@ -1,19 +1,20 @@
 /**
- * Created by quwantoq on 19.10.15.
+ * Created by quwantoq on 20.10.15.
  */
-public class Figure3 extends Shape {
+public class Figure5 extends Shape {
 
 
-
-    public Figure3(int x, int y) {
-        x1 = x;
-        x2 = x;
-        x3 = x;
-        x4 = x + CUBESIZE;
+    public Figure5(int x, int y) {
+        x1 = x + 2 * CUBESIZE;
+        x2 = x + CUBESIZE;
+        x3 = x + CUBESIZE;
+        x4 = x;
         y1 = y;
-        y2 = y + CUBESIZE;
-        y3 = y + 2 * CUBESIZE;
-        y4 = y + 2 * CUBESIZE;
+        y2 = y;
+        y3 = y + CUBESIZE;
+        y4 = y + CUBESIZE;
+
+
     }
 
     @Override
@@ -22,14 +23,14 @@ public class Figure3 extends Shape {
             //Cюда можно попасть из case 3
             case 0:
                 System.out.print((k % 4) + "\n");
-                x1l = x1 + CUBESIZE;
-                x2l = x2;
-                x3l = x3 - CUBESIZE;
-                x4l = x4;
-                y1l = y1 - CUBESIZE;
-                y2l = y2;
-                y3l = y3 + CUBESIZE;
-                y4l = y4 + 2 * CUBESIZE;
+                x1l = x1 + 2 * CUBESIZE;
+                x2l = x2 + CUBESIZE;
+                x3l = x3;
+                x4l = x4 - CUBESIZE;
+                y1l = y1;
+                y2l = y2 - CUBESIZE;
+                y3l = y3;
+                y4l = y4 - CUBESIZE;
                 if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
 
                     x1 = x1l;
@@ -48,14 +49,14 @@ public class Figure3 extends Shape {
 
             case 1:
                 System.out.print((k % 4) + "\n");
-                x1l = x1 + CUBESIZE;
-                x2l = x2;
-                x3l = x3 - CUBESIZE;
-                x4l = x4 - 2 * CUBESIZE;
-                y1l = y1 + CUBESIZE;
-                y2l = y2;
-                y3l = y3 - CUBESIZE;
-                y4l = y4;
+                x1l = x1 - 2 * CUBESIZE;
+                x2l = x2 - CUBESIZE;
+                x3l = x3;
+                x4l = x4 + CUBESIZE;
+                y1l = y1;
+                y2l = y2 + CUBESIZE;
+                y3l = y3;
+                y4l = y4 + CUBESIZE;
                 if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
                     x1 = x1l;
                     x2 = x2l;
@@ -73,14 +74,14 @@ public class Figure3 extends Shape {
             case 2:
 
                 System.out.print((k % 4) + "\n");
-                x1l = x1 - CUBESIZE;
-                x2l = x2;
-                x3l = x3 + CUBESIZE;
-                x4l = x4;
-                y1l = y1 + CUBESIZE;
-                y2l = y2;
-                y3l = y3 - CUBESIZE;
-                y4l = y4 - 2 * CUBESIZE;
+                x1l = x1 + 2 * CUBESIZE;
+                x2l = x2 + CUBESIZE;
+                x3l = x3;
+                x4l = x4 - CUBESIZE;
+                y1l = y1;
+                y2l = y2 - CUBESIZE;
+                y3l = y3;
+                y4l = y4 - CUBESIZE;
                 if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
                     x1 = x1l;
                     x2 = x2l;
@@ -98,14 +99,14 @@ public class Figure3 extends Shape {
             case 3:
                 //Here's next point to do!
                 System.out.print((k % 4) + "\n");
-                x1l = x1 - CUBESIZE;
-                x2l = x2;
-                x3l = x3 + CUBESIZE;
-                x4l = x4 + 2 * CUBESIZE;
-                y1l = y1 - CUBESIZE;
-                y2l = y2;
-                y3l = y3 + CUBESIZE;
-                y4l = y4;
+                x1l = x1 - 2 * CUBESIZE;
+                x2l = x2 - CUBESIZE;
+                x3l = x3;
+                x4l = x4 + CUBESIZE;
+                y1l = y1;
+                y2l = y2 + CUBESIZE;
+                y3l = y3;
+                y4l = y4 + CUBESIZE;
                 if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
                     x1 = x1l;
                     x2 = x2l;
@@ -126,5 +127,6 @@ public class Figure3 extends Shape {
 
 
     }
+
 }
 

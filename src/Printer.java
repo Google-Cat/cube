@@ -6,7 +6,11 @@ import java.awt.event.KeyEvent;
 public class Printer extends JPanel {
     Figure1 fh = new Figure1(0, 0);
     Figure2 f = new Figure2(0, 0);
-    Figure3 f1 = new Figure3(0, 0);
+    Figure3 f2 = new Figure3(0, 0);
+    Figure4 f3 = new Figure4(0, 0);
+    Figure5 f21 = new Figure5(0,0);
+    Figure6 f122 = new Figure6(0,0);
+    Figure7 f1=new Figure7(0,0);
 
     public Printer() {
         setFocusable(true);
