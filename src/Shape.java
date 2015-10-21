@@ -1,3 +1,4 @@
+import com.sun.xml.internal.ws.api.model.MEP;
 import sun.security.pkcs11.wrapper.CK_UNLOCKMUTEX;
 
 /**
@@ -30,20 +31,32 @@ class Shape {
     }
 
 
-   /*
-            FIGURE1      FIGURE2     FIGURE3         FIGURE4          FIGURE5      FIGURE6             FIGURE7                     .-
-            .......................................................................................................
-            ++++                   ++++                ++++
-            ++++                   ++++                ++++
-            ++++    ++++++++++     ++++                ++++        ++++++++++   ++++++++++            ++++
-            ++++    ++++++++++     ++++                ++++        ++++++++++   ++++++++++            ++++
-            ++++    ++++++++++     ++++                ++++    ++++++++++           ++++++++++   ++++++++++++++
-            ++++    ++++++++++     +++++++++      +++++++++    ++++++++++           ++++++++++   ++++++++++++++
-            ++++    ++++++++++     +++++++++      +++++++++
-            ++++
-            ++++
-*/
+    /*
+             FIGURE1      FIGURE2     FIGURE3         FIGURE4          FIGURE5      FIGURE6             FIGURE7                     .-
+             .......................................................................................................
+             ++++                   ++++                ++++
+             ++++                   ++++                ++++
+             ++++    ++++++++++     ++++                ++++        ++++++++++   ++++++++++            ++++
+             ++++    ++++++++++     ++++                ++++        ++++++++++   ++++++++++            ++++
+             ++++    ++++++++++     ++++                ++++    ++++++++++           ++++++++++   ++++++++++++++
+             ++++    ++++++++++     +++++++++      +++++++++    ++++++++++           ++++++++++   ++++++++++++++
+             ++++    ++++++++++     +++++++++      +++++++++
+             ++++
+             ++++
+ */
+    public void sendToMemory(Memory memory) {
+        memory.matrix[this.x1/CUBESIZE][this.y1/CUBESIZE]=true;
+        memory.matrix[this.x2/CUBESIZE][this.y2/CUBESIZE]=true;
+        memory.matrix[this.x3/CUBESIZE][this.y3/CUBESIZE]=true;
+        memory.matrix[this.x4/CUBESIZE][this.y4/CUBESIZE]=true;
 
+
+    }
+
+    public String getInfo() {
+
+        return "(x1;y1) (" + x1 / CUBESIZE + ";" + y1 / CUBESIZE + ") (x2;y2) (" + x2 / CUBESIZE + ";" + y2 / CUBESIZE + ") (x3;y3) (" + x3 / CUBESIZE + ";" + y3 / CUBESIZE + ") (x4;y4) (" + x4 / CUBESIZE + ";" + y4 / CUBESIZE + ")";
+    }
 
     void moveRight() {
         if ((x1 < CUBESIZE * 9) && (x2 < CUBESIZE * 9) && (x3 < CUBESIZE * 9) && (x4 < CUBESIZE * 9)) {
