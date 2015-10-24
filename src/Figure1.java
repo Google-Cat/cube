@@ -5,6 +5,7 @@ public class Figure1 extends Shape {
     byte k = 1;
 
     //Положение ротейшена вначале 0 (|)
+    //Сделать вращение вокруг среднего квадрата
     public Figure1(int x, int y) {
         x1 = x;
         x2 = x;
@@ -125,4 +126,13 @@ public class Figure1 extends Shape {
 
         }
     }
+
+    @Override
+    boolean isAnyThingUnderFigure(){
+
+
+      return true;
+    }
+
+
 }

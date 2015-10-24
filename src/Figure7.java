@@ -124,4 +124,34 @@ public class Figure7 extends Shape {
 
 
     }
+
+    @Override
+    boolean isAnyThingUnderFigure(Memory memory) {
+        //Красный-1
+        //Черный-2
+        //Синий-3
+        //Бирюзовый-4
+        switch (k) {
+            case 1:
+                /*
+                Тут надо под 2, 3, 4
+                 */
+                if (memory.getMatrix()[x2][y2]==true && memory.getMatrix()[x3][y3]==true &&  memory.getMatrix()[x4][y4]==true ){
+                 /*
+                 Стоп и заносим в матрицу
+                  memory.addToMatrix(x2,y2)
+                   memory.addToMatrix(x3,y3)
+                    memory.addToMatrix(x4,y4)
+                  */
+
+
+                }
+
+                break;
+
+        }
+
+        return false;
+    }
+
 }

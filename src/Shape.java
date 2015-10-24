@@ -45,10 +45,10 @@ class Shape {
              ++++
  */
     public void sendToMemory(Memory memory) {
-        memory.matrix[this.x1/CUBESIZE][this.y1/CUBESIZE]=true;
-        memory.matrix[this.x2/CUBESIZE][this.y2/CUBESIZE]=true;
-        memory.matrix[this.x3/CUBESIZE][this.y3/CUBESIZE]=true;
-        memory.matrix[this.x4/CUBESIZE][this.y4/CUBESIZE]=true;
+        memory.matrix[this.x1 / CUBESIZE][this.y1 / CUBESIZE] = true;
+        memory.matrix[this.x2 / CUBESIZE][this.y2 / CUBESIZE] = true;
+        memory.matrix[this.x3 / CUBESIZE][this.y3 / CUBESIZE] = true;
+        memory.matrix[this.x4 / CUBESIZE][this.y4 / CUBESIZE] = true;
 
 
     }
@@ -89,6 +89,11 @@ class Shape {
     }
 
     void rotateRight() {
+
+    }
+
+    boolean isAnyThingUnderFigure(Memory memory) {
+        return true;
 
     }
 

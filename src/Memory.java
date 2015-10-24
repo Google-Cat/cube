@@ -8,7 +8,7 @@ public class Memory {
     final int m = 9;
     boolean[][] matrix = new boolean[n][m];
 
-    public String getMatrix() {
-        return Arrays.deepToString(matrix);
+    public boolean[][] getMatrix() {
+        return matrix;
     }
 }
