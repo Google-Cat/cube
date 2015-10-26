@@ -127,12 +127,7 @@ public class Figure1 extends Shape {
         }
     }
 
-    @Override
-    boolean isAnyThingUnderFigure(){
 
-
-      return true;
-    }
 
 
 }

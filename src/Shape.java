@@ -97,12 +97,8 @@ class Shape {
 
     }
 
-    boolean getDown() {
 
-        if (y1 == 9 * CUBESIZE || y2 == 9 * CUBESIZE || y3 == 9 * CUBESIZE || y4 == 9 * CUBESIZE) {
-            return true;
-        } else return false;
-    }
+
 
     @Override
     public String toString() {

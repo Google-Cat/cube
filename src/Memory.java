@@ -9,6 +9,10 @@ public class Memory {
     boolean[][] matrix = new boolean[n][m];
 
     public boolean[][] getMatrix() {
+
         return matrix;
     }
+
+
+
 }

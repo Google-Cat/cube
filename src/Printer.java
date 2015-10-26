@@ -11,6 +11,7 @@ public class Printer extends JPanel {
     Figure5 f134 = new Figure5(0, 0);
     Figure6 f12 = new Figure6(0, 0);
     Figure7 f1 = new Figure7(0, 0);
+    Window w = new Window();
 
     public Printer() {
         setFocusable(true);
@@ -44,6 +45,7 @@ public class Printer extends JPanel {
 
                 } else if (key == KeyEvent.VK_UP) {
                     //Forced down move
+
                 }
 
             }
