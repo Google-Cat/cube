@@ -26,7 +26,7 @@ public class Window {
         f.pack();
         m.matrix[5][5] = true;
         System.out.println(m.matrix[5][5]);
-        System.out.println("Current matrix =" + Arrays.deepToString(m.getMatrix()));
+        System.out.println("Current matrix (1) =" + Arrays.deepToString(m.getMatrix()));
         //Тут я препятствие поставил вроде)
 
         // System.out.println(m.getMatrix());
@@ -38,6 +38,7 @@ public class Window {
                 //Отправка в память, если под ней есть, что либо
                 if (p.f1.isAnyThingUnderFigure(m)) {
                     p.f1.sendToMemory(m);
+                    System.out.println("Current matrix (2) =" + Arrays.deepToString(m.getMatrix()));
                 }
                 p.repaint();
                 System.out.println(p.f1.isAnyThingUnderFigure(m));

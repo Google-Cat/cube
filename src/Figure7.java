@@ -132,28 +132,18 @@ public class Figure7 extends Shape {
         //Черный-2
         //Синий-3
         //Бирюзовый-4
-        switch (k) {
-            case 0:
-                /*
-                Тут надо под 2, 3, 4
-                 */
-                if (memory.getMatrix()[x2 / CUBESIZE+1][y2 / CUBESIZE+1] == true && memory.getMatrix()[x3 / CUBESIZE+1][y3 / CUBESIZE+1] == true && memory.getMatrix()[x4 / CUBESIZE+1][y4 / CUBESIZE+1] == true) {
-                    bln = true;
+
+        if (memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true || memory.getMatrix()[x3 / CUBESIZE][y3 / CUBESIZE + 1] == true || memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true) {
+            bln = true;
                  /*
                  Стоп и заносим в матрицу
                   memory.addToMatrix(x2,y2)
                    memory.addToMatrix(x3,y3)
                     memory.addToMatrix(x4,y4)
                   */
-                }
-
-                break;
-            default:
-                bln = false;
-                break;
-
-
         }
+
+
         return bln;
 
     }
