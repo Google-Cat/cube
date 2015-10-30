@@ -4,13 +4,13 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class Printer extends JPanel {
-    Figure1 f11 = new Figure1(0, 0);
-    Figure2 f33 = new Figure2(0, 0);
-    Figure3 f12244 = new Figure3(0, 0);
-    Figure4 f122 = new Figure4(0, 0);
-    Figure5 f134 = new Figure5(0, 0);
-    Figure6 f12 = new Figure6(0, 0);
-    Figure7 f1 = new Figure7(0, 0);
+    Figure1 f1 = new Figure1(0, 0);
+    Figure2 f1333 = new Figure2(0, 0);
+    Figure3 f4112 = new Figure3(0, 0);
+    Figure4 f133 = new Figure4(0, 0);
+    Figure5 f15 = new Figure5(0, 0);
+    Figure6 f121 = new Figure6(0, 0);
+    Figure7 f12 = new Figure7(0, 0);
     Window w = new Window();
 
     public Printer() {

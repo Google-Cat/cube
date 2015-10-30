@@ -96,7 +96,7 @@ public class Figure6 extends Shape {
             case 3:
                 //Here's next point to do!
                 System.out.print((k % 4) + "\n");
-                x1l = x1 + 2*CUBESIZE;
+                x1l = x1 + 2 * CUBESIZE;
                 x2l = x2 + CUBESIZE;
                 x3l = x3;
                 x4l = x4 - CUBESIZE;
@@ -123,4 +123,45 @@ public class Figure6 extends Shape {
         }
 
     }
+    @Override
+    boolean isAnyThingUnderFigure(Memory memory) {
+        //Красный-1
+        //Черный-2
+        //Синий-3
+        //Бирюзовый-4
+        boolean bln = false;
+
+        switch (k % 4) {
+            case 1:
+                if (memory.getMatrix()[x3 / CUBESIZE][y3 / CUBESIZE + 1] == true || memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true) {
+                    bln = true;
+                    //this.sendToMemory(memory);
+                    break;
+                }
+            case 2:
+                if (memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true || memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true) {
+                    bln = true;
+                    break;
+                }
+            case 3:
+                if (memory.getMatrix()[x3 / CUBESIZE][y3 / CUBESIZE + 1] == true || memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true) {
+                    bln = true;
+                    break;
+                }
+            case 0:
+                if (memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true || memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true) {
+
+                    bln = true;
+                    break;
+                }
+
+//Вот тут надо делать!
+        }
+
+        System.out.println("This is number " + k % 4 + " cycle ");
+        return bln;
+
+    }
+
+
 }
