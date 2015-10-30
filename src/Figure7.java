@@ -126,25 +126,39 @@ public class Figure7 extends Shape {
 
     @Override
     boolean isAnyThingUnderFigure(Memory memory) {
-        boolean bln = false;
         //Красный-1
         //Черный-2
         //Синий-3
         //Бирюзовый-4
+        boolean bln = false;
 
-        if (memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true || memory.getMatrix()[x3 / CUBESIZE][y3 / CUBESIZE + 1] == true || memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true) {
-            bln = true;
-                 /*
-                 Стоп и заносим в матрицу
-                  memory.addToMatrix(x2,y2)
-                   memory.addToMatrix(x3,y3)
-                    memory.addToMatrix(x4,y4)
-                  */
+        switch (k % 4) {
+            case 1:
+                if (memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true || memory.getMatrix()[x3 / CUBESIZE][y3 / CUBESIZE + 1] == true || memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true) {
+                    bln = true;
+                    //this.sendToMemory(memory);
+                    break;
+                }
+            case 2:
+                if (memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true) {
+                    bln = true;
+                    break;
+                }
+            case 3:
+                if (memory.getMatrix()[x1 / CUBESIZE][y1 / CUBESIZE + 1] == true) {
+                    bln = true;
+                    break;
+                }
+            case 0:
+                if (memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true ) {
+
+                    bln = true;
+                    break;
+                }
+
+
         }
-
-
+        System.out.println("This is number " + k%4 + " cycle ");
         return bln;
-
     }
-
 }
