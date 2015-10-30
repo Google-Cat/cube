@@ -83,6 +83,7 @@ class Shape {
             y2 += CUBESIZE;
             y3 += CUBESIZE;
             y4 += CUBESIZE;
+
         }
 
 
@@ -93,11 +94,9 @@ class Shape {
     }
 
     boolean isAnyThingUnderFigure(Memory memory) {
-        return true;
+        return false;
 
     }
-
-
 
 
     @Override

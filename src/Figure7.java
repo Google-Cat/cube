@@ -122,7 +122,6 @@ public class Figure7 extends Shape {
 
         }
 
-
     }
 
     @Override

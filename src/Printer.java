@@ -70,8 +70,10 @@ public class Printer extends JPanel {
         g.setColor(Color.cyan);
         g.fillRect(f1.x4, f1.y4, CUBESIZE, CUBESIZE);
 
+        //Тут код пробегает по всей memory и рисует
 
-        g.drawString("My coordinates is: X:" + x + " Y:" + y, x + CUBESIZE, y - CUBESIZE);
+
+        //g.drawString("My coordinates is: X:" + x + " Y:" + y, x + CUBESIZE, y - CUBESIZE);
     }
 
 }

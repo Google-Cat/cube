@@ -1,4 +1,3 @@
-import sun.print.CUPSPrinter;
 
 import javax.swing.*;
 import java.awt.*;
