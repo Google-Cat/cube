@@ -4,6 +4,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class Printer extends JPanel {
+
     Figure1 f1 = new Figure1(0, 0);
     Figure2 f1333 = new Figure2(0, 0);
     Figure3 f4112 = new Figure3(0, 0);
@@ -56,10 +57,16 @@ public class Printer extends JPanel {
     private int y = 0;
     static public final int CUBESIZE = 20;
 
+    public void printMatrix(Memory m,Graphics g) {
+       /*
+       Code here
+        */
+
+    }
 
     @Override
     protected void paintComponent(Graphics g) {
-
+        printMatrix(new Memory(),g);
         super.paintComponent(g);
         g.setColor(Color.red);
         g.fillRect(f1.x1, f1.y1, CUBESIZE, CUBESIZE);
