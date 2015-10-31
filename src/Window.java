@@ -9,12 +9,12 @@ import java.util.Arrays;
  * Created by quwantoq on 06.10.15
  */
 public class Window {
-
+   static Memory m = new Memory();
 
     static byte c = 1;
 
     public static void main(String[] args) {
-        Memory m = new Memory();
+
         Printer p = new Printer();
         JFrame f = new JFrame();
 
