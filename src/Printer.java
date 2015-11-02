@@ -11,8 +11,8 @@ public class Printer extends JPanel {
     Figure3 f4112 = new Figure3(0, 0);
     Figure4 f133 = new Figure4(0, 0);
     Figure5 f15 = new Figure5(0, 0);
-    Figure6 f1 = new Figure6(0, 0);
-    Figure7 f12 = new Figure7(0, 0);
+    Figure6 f1222 = new Figure6(0, 0);
+    Figure7 f1 = new Figure7(0, 0);
     Window w = new Window();
     Memory m = new Memory();
 

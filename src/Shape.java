@@ -1,6 +1,3 @@
-import com.sun.xml.internal.ws.api.model.MEP;
-import sun.security.pkcs11.wrapper.CK_UNLOCKMUTEX;
-
 /**
  * Created by lunin_000 on 11.10.2015.
  */
@@ -54,7 +51,6 @@ class Shape {
     }
 
     public String getInfo() {
-
         return "(x1;y1) (" + x1 / CUBESIZE + ";" + y1 / CUBESIZE + ") (x2;y2) (" + x2 / CUBESIZE + ";" + y2 / CUBESIZE + ") (x3;y3) (" + x3 / CUBESIZE + ";" + y3 / CUBESIZE + ") (x4;y4) (" + x4 / CUBESIZE + ";" + y4 / CUBESIZE + ")";
     }
 
@@ -78,15 +74,18 @@ class Shape {
     }
 
     void moveDown() {
-        if ((y1 < CUBESIZE * 9) && (y2 < CUBESIZE * 9) && (y3 < CUBESIZE * 9) && (y4 < CUBESIZE * 9)) {
-            y1 += CUBESIZE;
-            y2 += CUBESIZE;
-            y3 += CUBESIZE;
-            y4 += CUBESIZE;
+        y1 += CUBESIZE;
+        y2 += CUBESIZE;
+        y3 += CUBESIZE;
+        y4 += CUBESIZE;
+    }
 
-        }
-
-
+    void sendToTop() {
+        //Need to rework!
+        y1 -= 5 * CUBESIZE;
+        y2 -= 5 * CUBESIZE;
+        y3 -= 5 * CUBESIZE;
+        y4 -= 5 * CUBESIZE;
     }
 
     void rotateRight() {

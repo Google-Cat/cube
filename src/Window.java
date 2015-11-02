@@ -9,9 +9,7 @@ import java.util.Arrays;
  * Created by quwantoq on 06.10.15
  */
 public class Window {
-   static Memory m = new Memory();
-
-    static byte c = 1;
+    static Memory m = new Memory();
 
     public static void main(String[] args) {
 
@@ -23,24 +21,23 @@ public class Window {
         f.setVisible(true);
         f.getContentPane().setPreferredSize(new Dimension(p.CUBESIZE * 10, p.CUBESIZE * 10));
         f.pack();
-        m.matrix[5][5] = true;
-        System.out.println(m.matrix[5][5]);
-        System.out.println("Current matrix (1) =" + Arrays.deepToString(m.getMatrix()));
-        //Тут я препятствие поставил вроде)
+        //m.matrix[5][5] = true;
+        //System.out.println(m.matrix[5][5]);
+        //System.out.println("Current matrix (1) =" + Arrays.deepToString(m.getMatrix()));
+        //Тут я препятствие поставил
 
         // System.out.println(m.getMatrix());
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 p.f1.moveDown();
-                System.out.println(p.f1.getInfo());
                 //Отправка в память, если под ней есть, что либо
                 if (p.f1.isAnyThingUnderFigure(m)) {
                     p.f1.sendToMemory(m);
-                    System.out.println("Current matrix (2) =" + Arrays.deepToString(m.getMatrix()));
+                    p.f1.sendToTop();
+                    //System.out.println("Current matrix (2) =" + Arrays.deepToString(m.getMatrix()));
                 }
                 p.repaint();
-                System.out.println(p.f1.isAnyThingUnderFigure(m));
 
 
             }
@@ -49,11 +46,7 @@ public class Window {
 
 
     }
-        /*
-        p.f1.moveDown();
-        p.f1.moveDown();
-        p.f1.moveDown();
-    */
+
 }
 
 

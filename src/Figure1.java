@@ -158,6 +158,10 @@ public class Figure1 extends Shape {
                     bln = true;
                     break;
                 }
+                default:
+                    bln=false;
+                    break;
+
 
 //Вот тут надо делать!
         }

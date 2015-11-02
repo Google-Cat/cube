@@ -145,12 +145,12 @@ public class Figure7 extends Shape {
                     break;
                 }
             case 3:
-                if (memory.getMatrix()[x1 / CUBESIZE][y1 / CUBESIZE + 1] == true) {
+                if (memory.getMatrix()[x1 / CUBESIZE][y1 / CUBESIZE + 1] == true || memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true) {
                     bln = true;
                     break;
                 }
             case 0:
-                if (memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true ) {
+                if (memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true || memory.getMatrix()[x1 / CUBESIZE][y1 / CUBESIZE + 1] == true) {
 
                     bln = true;
                     break;
@@ -158,7 +158,6 @@ public class Figure7 extends Shape {
 
 
         }
-        System.out.println("This is number " + k%4 + " cycle ");
-        return bln;
+       return bln;
     }
 }

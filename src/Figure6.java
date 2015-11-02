@@ -123,6 +123,7 @@ public class Figure6 extends Shape {
         }
 
     }
+
     @Override
     boolean isAnyThingUnderFigure(Memory memory) {
         //Красный-1
@@ -139,7 +140,7 @@ public class Figure6 extends Shape {
                     break;
                 }
             case 2:
-                if (memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true || memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true) {
+                if (memory.getMatrix()[x1 / CUBESIZE][y1 / CUBESIZE + 1] == true || memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true || memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true) {
                     bln = true;
                     break;
                 }
@@ -155,10 +156,9 @@ public class Figure6 extends Shape {
                     break;
                 }
 
-//Вот тут надо делать!
         }
 
-        System.out.println("This is number " + k % 4 + " cycle ");
+      
         return bln;
 
     }
