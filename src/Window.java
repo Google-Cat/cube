@@ -25,7 +25,6 @@ public class Window {
         //System.out.println(m.matrix[5][5]);
         //System.out.println("Current matrix (1) =" + Arrays.deepToString(m.getMatrix()));
         //Тут я препятствие поставил
-
         // System.out.println(m.getMatrix());
         Timer timer = new Timer(1000, new ActionListener() {
             @Override

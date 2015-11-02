@@ -94,20 +94,19 @@ public class Figure1 extends Shape {
                     y3 = y3l;
                     y4 = y4l;
                     k++;
+                    //тут баг (вращение фигуры)
                 }
-
-
                 break;
             case 3:
                 System.out.print((k % 4) + "\n");
                 x1l = x1;
-                x2l = x2 - CUBESIZE;
-                x3l = x3 - 2 * CUBESIZE;
-                x4l = x4 - 3 * CUBESIZE;
+                x2l = x2 + CUBESIZE;
+                x3l = x3 + 2 * CUBESIZE;
+                x4l = x4 + 3 * CUBESIZE;
                 y1l = y1;
-                y2l = y2 + CUBESIZE;
-                y3l = y3 + 2 * CUBESIZE;
-                y4l = y4 + 3 * CUBESIZE;
+                y2l = y2 - CUBESIZE;
+                y3l = y3 - 2 * CUBESIZE;
+                y4l = y4 - 3 * CUBESIZE;
                 if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
                     x1 = x1l;
                     x2 = x2l;
@@ -118,12 +117,8 @@ public class Figure1 extends Shape {
                     y3 = y3l;
                     y4 = y4l;
                     k++;
-
-                    break;
-
-
                 }
-
+                break;
         }
     }
 
@@ -158,9 +153,9 @@ public class Figure1 extends Shape {
                     bln = true;
                     break;
                 }
-                default:
-                    bln=false;
-                    break;
+            default:
+                bln = false;
+                break;
 
 
 //Вот тут надо делать!

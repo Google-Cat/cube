@@ -11,7 +11,6 @@ public class Figure7 extends Shape {
         y2 = y + CUBESIZE;
         y3 = y + CUBESIZE;
         y4 = y + CUBESIZE;
-
     }
 
     @Override
@@ -116,12 +115,8 @@ public class Figure7 extends Shape {
                     k++;
 
                     break;
-
-
                 }
-
         }
-
     }
 
     @Override
@@ -158,6 +153,6 @@ public class Figure7 extends Shape {
 
 
         }
-       return bln;
+        return bln;
     }
 }

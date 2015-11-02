@@ -1,5 +1,5 @@
 import java.awt.*;
-import java.util.Arrays;
+
 
 /**
  * Created by quwantoq on 21.10.15.
@@ -17,7 +17,6 @@ public class Memory {
     }
 
     public boolean[][] getMatrix() {
-
         return matrix;
     }
 
@@ -26,7 +25,9 @@ public class Memory {
         for (int c = 0; c < 10; c++) {
             for (int k = 0; k < 10; k++) {
                 if (matrix[c][k]) {
-
+                    graphics.setColor(Color.black);
+                    graphics.fillRect(c * CUBESIZE, k * CUBESIZE, CUBESIZE, CUBESIZE);
+                    graphics.setColor(Color.white);
                     graphics.drawRect(c * CUBESIZE, k * CUBESIZE, CUBESIZE, CUBESIZE);
                 }
             }
