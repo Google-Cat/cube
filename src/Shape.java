@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Created by lunin_000 on 11.10.2015.
  */
@@ -24,7 +26,9 @@ class Shape {
     int y4l;
 
 
-    Shape() {
+     Shape() {
+
+
     }
 
 
@@ -41,6 +45,28 @@ class Shape {
              ++++
              ++++
  */
+    public Shape shapeFactory() {
+        Random rand = new Random();
+        int r = rand.nextInt(6);
+        switch (r) {
+            case 0:
+                return new Figure1(0, 0);
+            case 1:
+                return new Figure2(0, 0);
+            case 2:
+                return new Figure3(0, 0);
+            case 3:
+                return new Figure4(0, 0);
+            case 4:
+                return new Figure5(0, 0);
+            case 5:
+                return new Figure6(0, 0);
+            case 6:
+                return new Figure7(0, 0);
+        }
+        return null;
+    }
+
     public void sendToMemory(Memory memory) {
         memory.matrix[this.x1 / CUBESIZE][this.y1 / CUBESIZE] = true;
         memory.matrix[this.x2 / CUBESIZE][this.y2 / CUBESIZE] = true;

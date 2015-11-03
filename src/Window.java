@@ -10,9 +10,10 @@ import java.util.Arrays;
  */
 public class Window {
     static Memory m = new Memory();
+    static Shape activeShape = new Shape();
 
     public static void main(String[] args) {
-
+        activeShape = activeShape.shapeFactory();
         Printer p = new Printer();
         JFrame f = new JFrame();
 
@@ -29,11 +30,12 @@ public class Window {
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                p.f1.moveDown();
+                activeShape.moveDown();
+                //p.f1.moveDown();
                 //Отправка в память, если под ней есть, что либо
-                if (p.f1.isAnyThingUnderFigure(m)) {
-                    p.f1.sendToMemory(m);
-                    p.f1.sendToTop();
+                if (activeShape.isAnyThingUnderFigure(m)) {
+                    activeShape.sendToMemory(m);
+                    activeShape = activeShape.shapeFactory();
                     //System.out.println("Current matrix (2) =" + Arrays.deepToString(m.getMatrix()));
                 }
                 p.repaint();

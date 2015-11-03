@@ -31,16 +31,16 @@ public class Printer extends JPanel {
                 int key = e.getKeyCode();
 
                 if (key == KeyEvent.VK_LEFT) {
-                    f1.moveLeft();
+                    window.activeShape.moveLeft();
                     repaint();
 
 
                 } else if (key == KeyEvent.VK_RIGHT) {
-                    f1.moveRight();
+                    window.activeShape.moveRight();
                     repaint();
 
                 } else if (key == KeyEvent.VK_DOWN) {
-                    f1.rotateRight();
+                    window.activeShape.rotateRight();
                     repaint();
 
                     //Rotation of fiugre
@@ -63,13 +63,13 @@ public class Printer extends JPanel {
         super.paintComponent(g);
         window.m.printMatrix(g);
         g.setColor(Color.red);
-        g.fillRect(f1.x1, f1.y1, CUBESIZE, CUBESIZE);
+        g.fillRect(window.activeShape.x1, window.activeShape.y1, CUBESIZE, CUBESIZE);
         g.setColor(Color.black);
-        g.fillRect(f1.x2, f1.y2, CUBESIZE, CUBESIZE);
+        g.fillRect(window.activeShape.x2, window.activeShape.y2, CUBESIZE, CUBESIZE);
         g.setColor(Color.blue);
-        g.fillRect(f1.x3, f1.y3, CUBESIZE, CUBESIZE);
+        g.fillRect(window.activeShape.x3, window.activeShape.y3, CUBESIZE, CUBESIZE);
         g.setColor(Color.cyan);
-        g.fillRect(f1.x4, f1.y4, CUBESIZE, CUBESIZE);
+        g.fillRect(window.activeShape.x4, window.activeShape.y4, CUBESIZE, CUBESIZE);
 
         /*
          g.setColor(Color.black);
