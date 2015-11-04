@@ -38,7 +38,6 @@ public class Memory {
         for (int k = 0; k < n; k++) {
             matrix[k][c] = false;
         }
-
     }
 
     public void cleanRow() {
