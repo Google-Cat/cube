@@ -26,9 +26,7 @@ class Shape {
     int y4l;
 
 
-     Shape() {
-
-
+    Shape() {
     }
 
 
@@ -47,7 +45,7 @@ class Shape {
  */
     public Shape shapeFactory() {
         Random rand = new Random();
-        int r = rand.nextInt(6);
+        int r = rand.nextInt(7);
         switch (r) {
             case 0:
                 return new Figure1(0, 0);

@@ -165,6 +165,6 @@ public class Figure1 extends Shape {
         return bln;
 
     }
-
+    //f1.paint()
 
 }

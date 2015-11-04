@@ -12,6 +12,7 @@ public class Window {
     static Memory m = new Memory();
     static Shape activeShape = new Shape();
 
+
     public static void main(String[] args) {
         activeShape = activeShape.shapeFactory();
         Printer p = new Printer();
@@ -36,6 +37,9 @@ public class Window {
                 if (activeShape.isAnyThingUnderFigure(m)) {
                     activeShape.sendToMemory(m);
                     activeShape = activeShape.shapeFactory();
+                    m.cleanRow();
+                    System.out.println(Arrays.deepToString(m.getMatrix()));
+
                     //System.out.println("Current matrix (2) =" + Arrays.deepToString(m.getMatrix()));
                 }
                 p.repaint();
@@ -44,10 +48,7 @@ public class Window {
             }
         });
         timer.start();
-
-
     }
-
 }
 
 
