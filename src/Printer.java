@@ -5,14 +5,7 @@ import java.awt.event.KeyEvent;
 
 
 public class Printer extends JPanel {
-    static final int CUBESIZE = 20;
-    Figure1 f1 = new Figure1(0, 0);
-    Figure2 f2 = new Figure2(0, 0);
-    Figure3 f3 = new Figure3(0, 0);
-    Figure4 f4 = new Figure4(0, 0);
-    Figure5 f5 = new Figure5(0, 0);
-    Figure6 f6 = new Figure6(0, 0);
-    Figure7 f7 = new Figure7(0, 0);
+
     Window window = new Window();
     Memory memory = new Memory();
 
@@ -49,6 +42,7 @@ public class Printer extends JPanel {
                 } else if (key == KeyEvent.VK_UP) {
                     //Forced down move
 
+
                 }
 
             }
@@ -56,20 +50,18 @@ public class Printer extends JPanel {
     }
 
 
-
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         window.m.printMatrix(g);
         g.setColor(Color.red);
-        g.fillRect(window.activeShape.x1, window.activeShape.y1, CUBESIZE, CUBESIZE);
+        g.fillRect(window.activeShape.x1, window.activeShape.y1, Window.CUBESIZE, Window.CUBESIZE);
         g.setColor(Color.black);
-        g.fillRect(window.activeShape.x2, window.activeShape.y2, CUBESIZE, CUBESIZE);
+        g.fillRect(window.activeShape.x2, window.activeShape.y2, Window.CUBESIZE, Window.CUBESIZE);
         g.setColor(Color.blue);
-        g.fillRect(window.activeShape.x3, window.activeShape.y3, CUBESIZE, CUBESIZE);
+        g.fillRect(window.activeShape.x3, window.activeShape.y3, Window.CUBESIZE, Window.CUBESIZE);
         g.setColor(Color.cyan);
-        g.fillRect(window.activeShape.x4, window.activeShape.y4, CUBESIZE, CUBESIZE);
+        g.fillRect(window.activeShape.x4, window.activeShape.y4, Window.CUBESIZE, Window.CUBESIZE);
 
         /*
          g.setColor(Color.black);

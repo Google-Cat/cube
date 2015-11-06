@@ -9,6 +9,9 @@ import java.util.Arrays;
  * Created by quwantoq on 06.10.15
  */
 public class Window {
+    static final int WIDTH = 10;
+    static final int HEIGTH = 15;
+    static final int CUBESIZE = 20;
     static Memory m = new Memory();
     static Shape activeShape = new Shape();
 
@@ -21,7 +24,7 @@ public class Window {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.add(p);
         f.setVisible(true);
-        f.getContentPane().setPreferredSize(new Dimension(p.CUBESIZE * 10, p.CUBESIZE * 10));
+        f.getContentPane().setPreferredSize(new Dimension(CUBESIZE * WIDTH, CUBESIZE * HEIGTH));
         f.pack();
         //m.matrix[5][5] = true;
         //System.out.println(m.matrix[5][5]);

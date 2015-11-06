@@ -122,6 +122,7 @@ public class Figure6 extends Shape {
 
         }
 
+
     }
 
     @Override
@@ -158,7 +159,7 @@ public class Figure6 extends Shape {
 
         }
 
-      
+
         return bln;
 
     }

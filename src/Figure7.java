@@ -1,6 +1,7 @@
 /**
  * Created by quwantoq on 20.10.15.
  */
+
 public class Figure7 extends Shape {
     Figure7(int x, int y) {
         x1 = x + CUBESIZE;

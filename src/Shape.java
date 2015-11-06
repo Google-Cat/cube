@@ -4,9 +4,10 @@ import java.util.Random;
  * Created by lunin_000 on 11.10.2015.
  */
 class Shape {
+    static int CUBESIZE = Window.CUBESIZE;
     byte k = 1;
 
-    static final int CUBESIZE = 20;
+
     int x1;
     int x2;
     int x3;
@@ -39,7 +40,7 @@ class Shape {
              ++++    ++++++++++     ++++                ++++        ++++++++++   ++++++++++            ++++
              ++++    ++++++++++     ++++                ++++    ++++++++++           ++++++++++   ++++++++++++++
              ++++    ++++++++++     +++++++++      +++++++++    ++++++++++           ++++++++++   ++++++++++++++
-             ++++    ++++++++++     +++++++++      +++++++++
+             ++++    ++++++++++     +++++++++      +++++++++                        Красный глючит
              ++++
              ++++
  */
@@ -66,10 +67,10 @@ class Shape {
     }
 
     public void sendToMemory(Memory memory) {
-        memory.matrix[this.x1 / CUBESIZE][this.y1 / CUBESIZE] = true;
-        memory.matrix[this.x2 / CUBESIZE][this.y2 / CUBESIZE] = true;
-        memory.matrix[this.x3 / CUBESIZE][this.y3 / CUBESIZE] = true;
-        memory.matrix[this.x4 / CUBESIZE][this.y4 / CUBESIZE] = true;
+        memory.getMatrix()[this.x1 / CUBESIZE][this.y1 / CUBESIZE] = true;
+        memory.getMatrix()[this.x2 / CUBESIZE][this.y2 / CUBESIZE] = true;
+        memory.getMatrix()[this.x3 / CUBESIZE][this.y3 / CUBESIZE] = true;
+        memory.getMatrix()[this.x4 / CUBESIZE][this.y4 / CUBESIZE] = true;
 
 
     }
