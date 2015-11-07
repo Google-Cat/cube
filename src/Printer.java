@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 public class Printer extends JPanel {
 
     Window window = new Window();
-    Memory memory = new Memory();
+
 
     public Printer() {
         setFocusable(true);
@@ -24,13 +24,13 @@ public class Printer extends JPanel {
                 int key = e.getKeyCode();
                 //In window writes, that move is unavailable, but here it's still moving
                 if (key == KeyEvent.VK_LEFT) {
-                    if (!window.activeShape.isAnyThingLeftFigure(memory)) {
+                    if (!window.activeShape.isAnyThingLeftFigure(window.memory)) {
                         window.activeShape.moveLeft();
                         repaint();
                     }
 
                 } else if (key == KeyEvent.VK_RIGHT) {
-                    if (!window.activeShape.isAnyThingRightFigure(memory)) {
+                    if (!window.activeShape.isAnyThingRightFigure(window.memory)) {
                         window.activeShape.moveRight();
                         repaint();
                     }
