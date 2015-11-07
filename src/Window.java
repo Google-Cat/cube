@@ -12,40 +12,32 @@ public class Window {
     static final int WIDTH = 10;
     static final int HEIGTH = 15;
     static final int CUBESIZE = 20;
-    static Memory m = new Memory();
+    static Memory memory = new Memory();
     static Shape activeShape = new Shape();
 
 
     public static void main(String[] args) {
         activeShape = activeShape.shapeFactory();
-        Printer p = new Printer();
+        Printer printer = new Printer();
         JFrame f = new JFrame();
-
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(p);
+        f.add(printer);
         f.setVisible(true);
         f.getContentPane().setPreferredSize(new Dimension(CUBESIZE * WIDTH, CUBESIZE * HEIGTH));
         f.pack();
-        //m.matrix[5][5] = true;
-        //System.out.println(m.matrix[5][5]);
-        //System.out.println("Current matrix (1) =" + Arrays.deepToString(m.getMatrix()));
-        //Тут я препятствие поставил
-        // System.out.println(m.getMatrix());
         Timer timer = new Timer(1000, new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 activeShape.moveDown();
-                //p.f1.moveDown();
-                //Отправка в память, если под ней есть, что либо
-                if (activeShape.isAnyThingUnderFigure(m)) {
-                    activeShape.sendToMemory(m);
+                if (activeShape.isAnyThingUnderFigure(memory)) {
+                    activeShape.sendToMemory(memory);
                     activeShape = activeShape.shapeFactory();
-                    m.cleanRow();
-                    System.out.println(Arrays.deepToString(m.getMatrix()));
+                    memory.cleanRow();
+                    //  System.out.println(Arrays.deepToString(m.getMatrix()));
 
-                    //System.out.println("Current matrix (2) =" + Arrays.deepToString(m.getMatrix()));
                 }
-                p.repaint();
+                printer.repaint();
 
 
             }

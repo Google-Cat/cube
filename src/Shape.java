@@ -118,8 +118,10 @@ class Shape {
     }
 
     boolean isAnyThingUnderFigure(Memory memory) {
-        return false;
+        if (memory.getMatrix()[x1 / CUBESIZE][y1 / CUBESIZE + 1] == true || memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE + 1] == true || memory.getMatrix()[x3 / CUBESIZE][y3 / CUBESIZE + 1] == true || memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE + 1] == true) {
+            return true;
 
+        } else return false;
     }
 
 

@@ -41,19 +41,15 @@ public class Printer extends JPanel {
 
                 } else if (key == KeyEvent.VK_UP) {
                     //Forced down move
-
-
                 }
-
             }
         });
     }
 
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        window.m.printMatrix(g);
+        window.memory.printMatrix(g);
         g.setColor(Color.red);
         g.fillRect(window.activeShape.x1, window.activeShape.y1, Window.CUBESIZE, Window.CUBESIZE);
         g.setColor(Color.black);
@@ -62,26 +58,6 @@ public class Printer extends JPanel {
         g.fillRect(window.activeShape.x3, window.activeShape.y3, Window.CUBESIZE, Window.CUBESIZE);
         g.setColor(Color.cyan);
         g.fillRect(window.activeShape.x4, window.activeShape.y4, Window.CUBESIZE, Window.CUBESIZE);
-
-        /*
-         g.setColor(Color.black);
-        g.fillRect(f1.x1, f1.y1, CUBESIZE, CUBESIZE);
-        g.setColor(Color.WHITE);
-        g.drawRect(f1.x1, f1.y1, CUBESIZE, CUBESIZE);
-        g.setColor(Color.black);
-        g.fillRect(f1.x2, f1.y2, CUBESIZE, CUBESIZE);
-        g.setColor(Color.WHITE);
-        g.drawRect(f1.x2, f1.y2, CUBESIZE, CUBESIZE);
-        g.setColor(Color.black);
-        g.fillRect(f1.x3, f1.y3, CUBESIZE, CUBESIZE);
-        g.setColor(Color.WHITE);
-        g.drawRect(f1.x3, f1.y3, CUBESIZE, CUBESIZE);
-        g.setColor(Color.black);
-        g.fillRect(f1.x4, f1.y4, CUBESIZE, CUBESIZE);
-        g.setColor(Color.WHITE);
-        g.drawRect(f1.x4, f1.y4, CUBESIZE, CUBESIZE);
-         */
-        //g.drawString(Boolean.toString(Window.m.matrix[5][5]),20,20);
     }
 
 }
