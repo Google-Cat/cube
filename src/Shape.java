@@ -16,7 +16,7 @@ class Shape {
     int y2;
     int y3;
     int y4;
-    // Переменные для проверки на поворот
+    // Variables to check rotation
     int x1l;
     int x2l;
     int x3l;
@@ -67,35 +67,31 @@ class Shape {
     }
 
     public void sendToMemory(Memory memory) {
-        memory.getMatrix()[this.x1 / CUBESIZE][this.y1 / CUBESIZE] = true;
-        memory.getMatrix()[this.x2 / CUBESIZE][this.y2 / CUBESIZE] = true;
-        memory.getMatrix()[this.x3 / CUBESIZE][this.y3 / CUBESIZE] = true;
-        memory.getMatrix()[this.x4 / CUBESIZE][this.y4 / CUBESIZE] = true;
+        memory.getMatrix()[this.x1 / CUBESIZE + 1][this.y1 / CUBESIZE] = true;
+        memory.getMatrix()[this.x2 / CUBESIZE + 1][this.y2 / CUBESIZE] = true;
+        memory.getMatrix()[this.x3 / CUBESIZE + 1][this.y3 / CUBESIZE] = true;
+        memory.getMatrix()[this.x4 / CUBESIZE + 1][this.y4 / CUBESIZE] = true;
 
 
-    }
-
-    public String getInfo() {
-        return "(x1;y1) (" + x1 / CUBESIZE + ";" + y1 / CUBESIZE + ") (x2;y2) (" + x2 / CUBESIZE + ";" + y2 / CUBESIZE + ") (x3;y3) (" + x3 / CUBESIZE + ";" + y3 / CUBESIZE + ") (x4;y4) (" + x4 / CUBESIZE + ";" + y4 / CUBESIZE + ")";
     }
 
     void moveRight() {
-        if ((x1 < CUBESIZE * 9) && (x2 < CUBESIZE * 9) && (x3 < CUBESIZE * 9) && (x4 < CUBESIZE * 9)) {
-            x1 += CUBESIZE;
-            x2 += CUBESIZE;
-            x3 += CUBESIZE;
-            x4 += CUBESIZE;
-        }
+
+        x1 += CUBESIZE;
+        x2 += CUBESIZE;
+        x3 += CUBESIZE;
+        x4 += CUBESIZE;
+
 
     }
 
     void moveLeft() {
-        if ((x1 > 0) && (x2 > 0) && (x3 > 0) && (x4 > 0)) {
-            x2 -= CUBESIZE;
-            x3 -= CUBESIZE;
-            x4 -= CUBESIZE;
-            x1 -= CUBESIZE;
-        }
+
+        x2 -= CUBESIZE;
+        x3 -= CUBESIZE;
+        x4 -= CUBESIZE;
+        x1 -= CUBESIZE;
+
     }
 
     void moveDown() {
@@ -105,27 +101,30 @@ class Shape {
         y4 += CUBESIZE;
     }
 
-    void sendToTop() {
-        //Need to rework!
-        y1 -= 5 * CUBESIZE;
-        y2 -= 5 * CUBESIZE;
-        y3 -= 5 * CUBESIZE;
-        y4 -= 5 * CUBESIZE;
-    }
-
     void rotateRight() {
 
     }
 
+    boolean isAnyThingRightFigure(Memory memory) {
+        if (memory.getMatrix()[x1 / CUBESIZE + 2][y1 / CUBESIZE] || memory.getMatrix()[x2 / CUBESIZE + 2][y2 / CUBESIZE] || memory.getMatrix()[x3 / CUBESIZE + 2][y3 / CUBESIZE] || memory.getMatrix()[x4 / CUBESIZE + 2][y4 / CUBESIZE]) {
+            return true;
+        } else return false;
+    }
+
+    boolean isAnyThingLeftFigure(Memory memory) {
+        if (memory.getMatrix()[x1 / CUBESIZE][y1 / CUBESIZE] || memory.getMatrix()[x2 / CUBESIZE][y2 / CUBESIZE] || memory.getMatrix()[x3 / CUBESIZE][y3 / CUBESIZE] || memory.getMatrix()[x4 / CUBESIZE][y4 / CUBESIZE]) {
+            return true;
+        } else return false;
+
+    }
+
     boolean isAnyThingUnderFigure(Memory memory) {
-        return false;
+        if (memory.getMatrix()[x1 / CUBESIZE + 1][y1 / CUBESIZE + 1] || memory.getMatrix()[x2 / CUBESIZE + 1][y2 / CUBESIZE + 1] || memory.getMatrix()[x3 / CUBESIZE + 1][y3 / CUBESIZE + 1] || memory.getMatrix()[x4 / CUBESIZE + 1][y4 / CUBESIZE + 1]) {
+            return true;
 
+        } else return false;
     }
 
 
-    @Override
-    public String toString() {
-        return "(" + ")";
-    }
 }
 

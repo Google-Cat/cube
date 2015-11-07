@@ -6,13 +6,23 @@ import java.awt.*;
  */
 public class Memory {
     static int WIDTH = Window.WIDTH;
+    //Если ширина поля 3, то "грани стакана" должны быть на 1 влево и вправо
     static int HEIGTH = Window.HEIGTH + 1;
-    private boolean[][] matrix = new boolean[WIDTH][HEIGTH];
+    private boolean[][] matrix = new boolean[WIDTH+2][HEIGTH];
 
     Memory() {
-        for (int k = 0; k < WIDTH; k++) {
+        for (int k = 0; k < WIDTH+1; k++) {
             matrix[k][HEIGTH - 1] = true;
         }
+
+        for (int k = 0; k< HEIGTH;k++){
+            matrix[0][k]=true;
+        }
+
+        for (int k =0;k<HEIGTH;k++){
+            matrix[WIDTH+1][k]=true;
+        }
+
     }
 
     public boolean[][] getMatrix() {
@@ -20,14 +30,14 @@ public class Memory {
     }
 
     public void printMatrix(Graphics graphics) {
-
-        for (int c = 0; c < WIDTH; c++) {
+    //У WIDTH убрать +1 у HEIGTH -1
+        for (int c = 1; c < WIDTH+1+1; c++) {
             for (int k = 0; k < HEIGTH; k++) {
                 if (matrix[c][k]) {
                     graphics.setColor(Color.black);
-                    graphics.fillRect(c * Window.CUBESIZE, k * Window.CUBESIZE, Window.CUBESIZE, Window.CUBESIZE);
+                    graphics.fillRect((c-1) * Window.CUBESIZE, k * Window.CUBESIZE, Window.CUBESIZE, Window.CUBESIZE);
                     graphics.setColor(Color.white);
-                    graphics.drawRect(c * Window.CUBESIZE, k * Window.CUBESIZE, Window.CUBESIZE, Window.CUBESIZE);
+                    graphics.drawRect((c-1) * Window.CUBESIZE, k * Window.CUBESIZE, Window.CUBESIZE, Window.CUBESIZE);
                 }
             }
         }
@@ -58,8 +68,7 @@ public class Memory {
                     canWeDo = false;
                     break;
                 }
-                //??????? ?? ?????? ???????, ???? canWeDo ? ??? ????????, ???? false ?? ???
-                //?????? ??? ????? ?? ????????
+
             }
             if (canWeDo) {
                 System.out.println("Clean it!");
