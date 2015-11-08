@@ -75,34 +75,35 @@ class Shape {
 
     }
 
-    void moveRight() {
-
-        x1 += CUBESIZE;
-        x2 += CUBESIZE;
-        x3 += CUBESIZE;
-        x4 += CUBESIZE;
-
-
-    }
-
-    void moveLeft() {
-
-        x2 -= CUBESIZE;
-        x3 -= CUBESIZE;
-        x4 -= CUBESIZE;
-        x1 -= CUBESIZE;
+    void moveRight(Memory memory) {
+        if (!isAnyThingRightFigure(memory)) {
+            x1 += CUBESIZE;
+            x2 += CUBESIZE;
+            x3 += CUBESIZE;
+            x4 += CUBESIZE;
+        }
 
     }
 
-    void moveDown() {
-        y1 += CUBESIZE;
-        y2 += CUBESIZE;
-        y3 += CUBESIZE;
-        y4 += CUBESIZE;
+    void moveLeft(Memory memory) {
+        if (!isAnyThingLeftFigure(memory)) {
+            x2 -= CUBESIZE;
+            x3 -= CUBESIZE;
+            x4 -= CUBESIZE;
+            x1 -= CUBESIZE;
+        }
+    }
+
+    void moveDown(Memory memory) {
+        if (!isAnyThingUnderFigure(memory)) {
+            y1 += CUBESIZE;
+            y2 += CUBESIZE;
+            y3 += CUBESIZE;
+            y4 += CUBESIZE;
+        }
     }
 
     void rotateRight() {
-
     }
 
     boolean isAnyThingRightFigure(Memory memory) {
