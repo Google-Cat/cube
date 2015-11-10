@@ -1,8 +1,7 @@
+package ru.quwantoq.tetris;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class Window {
@@ -10,7 +9,7 @@ public class Window {
     static final int HEIGHT = 15;
     static final int CUBESIZE = 20;
     static Memory memory = new Memory();
-    static Shape activeShape = new Shape();
+    static ru.quwantoq.tetris.Shape activeShape = new ru.quwantoq.tetris.Shape();
     static JFrame frame = new JFrame();
     static Printer printer = new Printer();
 

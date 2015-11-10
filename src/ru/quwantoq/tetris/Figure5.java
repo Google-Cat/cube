@@ -1,16 +1,21 @@
+package ru.quwantoq.tetris;
+
 /**
  * Created by quwantoq on 20.10.15.
  */
-public class Figure6 extends Shape {
-    public Figure6(int x, int y) {
-        x1 = x;
+public class Figure5 extends Shape {
+
+
+    public Figure5(int x, int y) {
+        x1 = x + 2 * CUBESIZE;
         x2 = x + CUBESIZE;
         x3 = x + CUBESIZE;
-        x4 = x + 2 * CUBESIZE;
+        x4 = x;
         y1 = y;
         y2 = y;
         y3 = y + CUBESIZE;
         y4 = y + CUBESIZE;
+
 
     }
 
@@ -20,10 +25,10 @@ public class Figure6 extends Shape {
             //Cюда можно попасть из case 3
             case 0:
                 System.out.print((k % 4) + "\n");
-                x1l = x1 - 2 * CUBESIZE;
-                x2l = x2 - CUBESIZE;
+                x1l = x1 + 2 * CUBESIZE;
+                x2l = x2 + CUBESIZE;
                 x3l = x3;
-                x4l = x4 + CUBESIZE;
+                x4l = x4 - CUBESIZE;
                 y1l = y1;
                 y2l = y2 - CUBESIZE;
                 y3l = y3;
@@ -46,10 +51,10 @@ public class Figure6 extends Shape {
 
             case 1:
                 System.out.print((k % 4) + "\n");
-                x1l = x1 + 2 * CUBESIZE;
-                x2l = x2 + CUBESIZE;
+                x1l = x1 - 2 * CUBESIZE;
+                x2l = x2 - CUBESIZE;
                 x3l = x3;
-                x4l = x4 - CUBESIZE;
+                x4l = x4 + CUBESIZE;
                 y1l = y1;
                 y2l = y2 + CUBESIZE;
                 y3l = y3;
@@ -71,10 +76,10 @@ public class Figure6 extends Shape {
             case 2:
 
                 System.out.print((k % 4) + "\n");
-                x1l = x1 - 2 * CUBESIZE;
-                x2l = x2 - CUBESIZE;
+                x1l = x1 + 2 * CUBESIZE;
+                x2l = x2 + CUBESIZE;
                 x3l = x3;
-                x4l = x4 + CUBESIZE;
+                x4l = x4 - CUBESIZE;
                 y1l = y1;
                 y2l = y2 - CUBESIZE;
                 y3l = y3;
@@ -96,10 +101,10 @@ public class Figure6 extends Shape {
             case 3:
                 //Here's next point to do!
                 System.out.print((k % 4) + "\n");
-                x1l = x1 + 2 * CUBESIZE;
-                x2l = x2 + CUBESIZE;
+                x1l = x1 - 2 * CUBESIZE;
+                x2l = x2 - CUBESIZE;
                 x3l = x3;
-                x4l = x4 - CUBESIZE;
+                x4l = x4 + CUBESIZE;
                 y1l = y1;
                 y2l = y2 + CUBESIZE;
                 y3l = y3;
@@ -120,3 +125,4 @@ public class Figure6 extends Shape {
         }
     }
 }
+

@@ -1,3 +1,5 @@
+package ru.quwantoq.tetris;
+
 import java.util.Arrays;
 
 public class Figure1 extends Shape {

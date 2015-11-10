@@ -1,8 +1,7 @@
+package ru.quwantoq.tetris;
+
 import java.util.Random;
 
-/**
- * Created by lunin_000 on 11.10.2015.
- */
 class Shape {
     static int CUBESIZE = Window.CUBESIZE;
     byte k = 1;

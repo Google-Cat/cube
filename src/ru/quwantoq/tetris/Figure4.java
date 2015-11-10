@@ -1,3 +1,5 @@
+package ru.quwantoq.tetris;
+
 /**
  * Created by quwantoq on 20.10.15.
  */
