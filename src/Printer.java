@@ -56,6 +56,5 @@ public class Printer extends JPanel {
         g.setColor(Color.cyan);
         g.fillRect(Window.activeShape.x4, Window.activeShape.y4, Window.CUBESIZE, Window.CUBESIZE);
     }
-
 }
 

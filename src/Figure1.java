@@ -1,6 +1,5 @@
-/**
- * Created by quwantoq on 16.10.15.
- */
+import java.util.Arrays;
+
 public class Figure1 extends Shape {
     byte k = 1;
 
@@ -24,6 +23,7 @@ public class Figure1 extends Shape {
         switch (k % 4) {
             //Cюда можно попасть из case 3
             case 0:
+
                 System.out.print((k % 4) + "\n");
                 x1l = x1;
                 x2l = x2 + CUBESIZE;
@@ -33,8 +33,9 @@ public class Figure1 extends Shape {
                 y2l = y2 + CUBESIZE;
                 y3l = y2 + 2 * CUBESIZE;
                 y4l = y2 + 3 * CUBESIZE;
-                if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
 
+                //  if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
+                if (!Window.memory.getMatrix()[x1l / CUBESIZE][y1l / CUBESIZE] && !Window.memory.getMatrix()[x2l / CUBESIZE][y2l / CUBESIZE] && !Window.memory.getMatrix()[x3l / CUBESIZE][y3l / CUBESIZE] && !Window.memory.getMatrix()[x4l / CUBESIZE][y4l / CUBESIZE]) {
                     x1 = x1l;
                     x2 = x2l;
                     x3 = x3l;
@@ -59,7 +60,9 @@ public class Figure1 extends Shape {
                 y2l = y2;
                 y3l = y3 - CUBESIZE;
                 y4l = y4 - 2 * CUBESIZE;
-                if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
+                if (!Window.memory.getMatrix()[x1l / CUBESIZE + 1][y1l / CUBESIZE] && !Window.memory.getMatrix()[x2l / CUBESIZE + 1][y2l / CUBESIZE] && !Window.memory.getMatrix()[x3l / CUBESIZE + 1][y3l / CUBESIZE] && !Window.memory.getMatrix()[x4l / CUBESIZE + 1][y4l / CUBESIZE]) {
+                    System.out.println(Arrays.deepToString(Window.memory.getMatrix()));
+                    System.out.println(Integer.toString(x1l / CUBESIZE) + "; " + Integer.toString(y1l / CUBESIZE) + " " + Integer.toString(x2l / CUBESIZE) + "; " + Integer.toString(y2l / CUBESIZE) + " " + Integer.toString(x3l / CUBESIZE) + "; " + Integer.toString(x3l / CUBESIZE) + " " + Integer.toString(x4l / CUBESIZE) + "; " + Integer.toString(y4l / CUBESIZE));
                     x1 = x1l;
                     x2 = x2l;
                     x3 = x3l;
@@ -84,7 +87,7 @@ public class Figure1 extends Shape {
                 y2l = y2 - CUBESIZE;
                 y3l = y3 - 2 * CUBESIZE;
                 y4l = y4 - 3 * CUBESIZE;
-                if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
+                if (!Window.memory.getMatrix()[x1l / CUBESIZE + 1][y1l / CUBESIZE] && !Window.memory.getMatrix()[x2l / CUBESIZE + 1][y2l / CUBESIZE] && !Window.memory.getMatrix()[x3l / CUBESIZE + 1][y3l / CUBESIZE] && !Window.memory.getMatrix()[x4l / CUBESIZE + 1][y4l / CUBESIZE]) {
                     x1 = x1l;
                     x2 = x2l;
                     x3 = x3l;
@@ -107,7 +110,7 @@ public class Figure1 extends Shape {
                 y2l = y2 - CUBESIZE;
                 y3l = y3 - 2 * CUBESIZE;
                 y4l = y4 - 3 * CUBESIZE;
-                if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
+                if (!Window.memory.getMatrix()[x1l / CUBESIZE + 1][y1l / CUBESIZE] && !Window.memory.getMatrix()[x2l / CUBESIZE + 1][y2l / CUBESIZE] && !Window.memory.getMatrix()[x3l / CUBESIZE + 1][y3l / CUBESIZE] && !Window.memory.getMatrix()[x4l / CUBESIZE + 1][y4l / CUBESIZE]) {
                     x1 = x1l;
                     x2 = x2l;
                     x3 = x3l;
@@ -116,6 +119,7 @@ public class Figure1 extends Shape {
                     y2 = y2l;
                     y3 = y3l;
                     y4 = y4l;
+
                     k++;
                 }
                 break;

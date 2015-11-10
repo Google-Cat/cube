@@ -6,45 +6,53 @@ import java.awt.*;
  */
 public class Memory {
     static int WIDTH = Window.WIDTH;
-    //Если ширина поля 3, то "грани стакана" должны быть на 1 влево и вправо
-    static int HEIGTH = Window.HEIGTH + 1;
-    private boolean[][] matrix = new boolean[WIDTH+2][HEIGTH];
+    static int HEIGHT = Window.HEIGHT + 1;
+    private boolean[][] matrix = new boolean[WIDTH + 2][HEIGHT];
 
     Memory() {
-        for (int k = 0; k < WIDTH+1; k++) {
-            matrix[k][HEIGTH - 1] = true;
+        for (int k = 0; k < WIDTH + 1; k++) {
+            matrix[k][HEIGHT - 1] = true;
         }
 
-        for (int k = 0; k< HEIGTH;k++){
-            matrix[0][k]=true;
+        for (int k = 0; k < HEIGHT; k++) {
+            matrix[0][k] = true;
         }
 
-        for (int k =0;k<HEIGTH;k++){
-            matrix[WIDTH+1][k]=true;
+        for (int k = 0; k < HEIGHT; k++) {
+            matrix[WIDTH + 1][k] = true;
         }
+
+    }
+
+    public void absorbFigure(Shape shape) {
+        matrix[shape.x1 / Window.CUBESIZE + 1][shape.y1 / Window.CUBESIZE] = true;
+        matrix[shape.x2 / Window.CUBESIZE + 1][shape.y2 / Window.CUBESIZE] = true;
+        matrix[shape.x3 / Window.CUBESIZE + 1][shape.y3 / Window.CUBESIZE] = true;
+        matrix[shape.x4 / Window.CUBESIZE + 1][shape.y4 / Window.CUBESIZE] = true;
 
     }
 
     public boolean[][] getMatrix() {
         return matrix;
+
     }
 
     public void printMatrix(Graphics graphics) {
-    //У WIDTH убрать +1 у HEIGTH -1
-        for (int c = 1; c < WIDTH+1+1; c++) {
-            for (int k = 0; k < HEIGTH; k++) {
+        //пїЅ WIDTH пїЅпїЅпїЅпїЅпїЅпїЅ +1 пїЅ HEIGHT -1
+        for (int c = 1; c < WIDTH + 1 + 1; c++) {
+            for (int k = 0; k < HEIGHT; k++) {
                 if (matrix[c][k]) {
                     graphics.setColor(Color.black);
-                    graphics.fillRect((c-1) * Window.CUBESIZE, k * Window.CUBESIZE, Window.CUBESIZE, Window.CUBESIZE);
+                    graphics.fillRect((c - 1) * Window.CUBESIZE, k * Window.CUBESIZE, Window.CUBESIZE, Window.CUBESIZE);
                     graphics.setColor(Color.white);
-                    graphics.drawRect((c-1) * Window.CUBESIZE, k * Window.CUBESIZE, Window.CUBESIZE, Window.CUBESIZE);
+                    graphics.drawRect((c - 1) * Window.CUBESIZE, k * Window.CUBESIZE, Window.CUBESIZE, Window.CUBESIZE);
                 }
             }
         }
     }
 
     public void fill(int c, boolean bl) {
-        for (int k = 0; k < WIDTH; k++) {
+        for (int k = 0; k < WIDTH + 1; k++) {
             matrix[k][c] = bl;
         }
     }
@@ -52,23 +60,23 @@ public class Memory {
 
     public void pushUpper(int inputRow) {
         for (int c = inputRow; c > 0; c--) {
-            for (int k = 0; k < WIDTH; k++) {
+            for (int k = 0; k < WIDTH + 1; k++) {
                 matrix[k][c] = matrix[k][c - 1];
             }
         }
     }
 
     public void cleanRow() {
+        //РўСѓС‚ РѕРїСЏС‚СЊ РѕС€РёР±РєР°
         int c = 0;
         boolean canWeDo;
-        for (; c < HEIGTH - 1; c++) {
+        for (; c < HEIGHT - 1; c++) {
             canWeDo = true;
-            for (int k = 0; k < 10; k++) {
+            for (int k = 0; k < WIDTH + 1; k++) {
                 if (!matrix[k][c]) {
                     canWeDo = false;
                     break;
                 }
-
             }
             if (canWeDo) {
                 System.out.println("Clean it!");

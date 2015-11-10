@@ -66,14 +66,6 @@ class Shape {
         return null;
     }
 
-    public void sendToMemory(Memory memory) {
-        memory.getMatrix()[this.x1 / CUBESIZE + 1][this.y1 / CUBESIZE] = true;
-        memory.getMatrix()[this.x2 / CUBESIZE + 1][this.y2 / CUBESIZE] = true;
-        memory.getMatrix()[this.x3 / CUBESIZE + 1][this.y3 / CUBESIZE] = true;
-        memory.getMatrix()[this.x4 / CUBESIZE + 1][this.y4 / CUBESIZE] = true;
-
-
-    }
 
     void moveRight(Memory memory) {
         if (!isAnyThingRightFigure(memory)) {
