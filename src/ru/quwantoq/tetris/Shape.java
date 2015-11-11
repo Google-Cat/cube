@@ -116,7 +116,5 @@ class Shape {
 
         } else return false;
     }
-
-
 }
 

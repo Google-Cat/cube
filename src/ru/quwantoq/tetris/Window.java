@@ -9,13 +9,12 @@ public class Window {
     static final int HEIGHT = 15;
     static final int CUBESIZE = 20;
     static Memory memory = new Memory();
-    static ru.quwantoq.tetris.Shape activeShape = new ru.quwantoq.tetris.Shape();
+    static Shape activeShape = new Shape();
     static JFrame frame = new JFrame();
     static Printer printer = new Printer();
 
     public static void main(String[] args) {
         activeShape = activeShape.shapeFactory();
-
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.add(printer);
         frame.setVisible(true);

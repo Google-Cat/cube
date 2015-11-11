@@ -31,7 +31,7 @@ public class Figure3 extends Shape {
                 y2l = y2;
                 y3l = y3 + CUBESIZE;
                 y4l = y4 + 2 * CUBESIZE;
-                if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
+                if (!Window.memory.getMatrix()[x1l / CUBESIZE + 1][y1l / CUBESIZE] && !Window.memory.getMatrix()[x2l / CUBESIZE + 1][y2l / CUBESIZE] && !Window.memory.getMatrix()[x3l / CUBESIZE + 1][y3l / CUBESIZE] && !Window.memory.getMatrix()[x4l / CUBESIZE + 1][y4l / CUBESIZE]) {
 
                     x1 = x1l;
                     x2 = x2l;
@@ -57,7 +57,7 @@ public class Figure3 extends Shape {
                 y2l = y2;
                 y3l = y3 - CUBESIZE;
                 y4l = y4;
-                if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
+                if (!Window.memory.getMatrix()[x1l / CUBESIZE + 1][y1l / CUBESIZE] && !Window.memory.getMatrix()[x2l / CUBESIZE + 1][y2l / CUBESIZE] && !Window.memory.getMatrix()[x3l / CUBESIZE + 1][y3l / CUBESIZE] && !Window.memory.getMatrix()[x4l / CUBESIZE + 1][y4l / CUBESIZE]) {
                     x1 = x1l;
                     x2 = x2l;
                     x3 = x3l;
@@ -82,7 +82,7 @@ public class Figure3 extends Shape {
                 y2l = y2;
                 y3l = y3 - CUBESIZE;
                 y4l = y4 - 2 * CUBESIZE;
-                if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
+                if (!Window.memory.getMatrix()[x1l / CUBESIZE + 1][y1l / CUBESIZE] && !Window.memory.getMatrix()[x2l / CUBESIZE + 1][y2l / CUBESIZE] && !Window.memory.getMatrix()[x3l / CUBESIZE + 1][y3l / CUBESIZE] && !Window.memory.getMatrix()[x4l / CUBESIZE + 1][y4l / CUBESIZE]) {
                     x1 = x1l;
                     x2 = x2l;
                     x3 = x3l;
@@ -107,7 +107,7 @@ public class Figure3 extends Shape {
                 y2l = y2;
                 y3l = y3 + CUBESIZE;
                 y4l = y4;
-                if ((x1l < CUBESIZE * 9) && (x2l < CUBESIZE * 9) && (x3l < CUBESIZE * 9) && (x4l < CUBESIZE * 9) && (x1l > 0) && (x2l > 0) && (x3l > 0) && (x4l > 0) && (y1l < CUBESIZE * 9) && (y2l < CUBESIZE * 9) && (y3l < CUBESIZE * 9) && (y4l < CUBESIZE * 9)) {
+                if (!Window.memory.getMatrix()[x1l / CUBESIZE + 1][y1l / CUBESIZE] && !Window.memory.getMatrix()[x2l / CUBESIZE + 1][y2l / CUBESIZE] && !Window.memory.getMatrix()[x3l / CUBESIZE + 1][y3l / CUBESIZE] && !Window.memory.getMatrix()[x4l / CUBESIZE + 1][y4l / CUBESIZE]) {
                     x1 = x1l;
                     x2 = x2l;
                     x3 = x3l;
